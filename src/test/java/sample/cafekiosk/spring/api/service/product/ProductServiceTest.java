@@ -1,8 +1,6 @@
 package sample.cafekiosk.spring.api.service.product;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -29,6 +27,23 @@ class ProductServiceTest {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @BeforeAll
+    static void beforeAll() {
+        // before class
+        // 테스트 클래스 전체 실행 전에 한번 실행하는
+
+    }
+
+    @BeforeEach
+    void setUp() {
+        // before method
+        // 매 테스트 메서드 실행 전에 실행하는
+
+        // 각 테스트 입장에서 보았을 때, 아예 몰라도 테스트 내용을 이해하는 데에 문제가 없는가?
+        // 수정해도 모든 테스트에 영향을 주지 않는가?
+        // 위 2조건을 만족하면 beforeEach 에 작성해도 괜찮다.
+    }
 
     @AfterEach
     void tearDown() {
